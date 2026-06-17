@@ -1,0 +1,234 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: block;
+    /* Milder, harmonious page background */
+    background: linear-gradient(54deg, rgb(14, 26, 38) 20%, rgb(12, 70, 95) 45%, rgb(0, 0, 0) 100%);
+    padding-top: 72px;
+}
+
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    backdrop-filter: blur(6px);
+    z-index: 1000;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    position: relative;
+    
+}
+
+.lang-btn {
+    padding: 10px 16px;
+    display: inline-flex;
+    padding: 10px 18px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+    border: 1px solid cyan;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    background: none;
+}
+
+.header-nav {
+    display: flex;
+    gap: 16px;
+}
+
+.nav-box {
+    display: inline-flex;
+    padding: 10px 18px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+    border: 1px solid cyan;
+    border-radius: 10px;
+}
+
+.lang-dropdown {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 100%;
+    margin-left: 12px;
+    padding: 10px;
+    min-width: 180px;
+    background: rgba(0, 0, 0, 0.96);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 14px;
+    box-shadow: 0 20px 44px rgba(0,0,0,0.55);
+    display: none;
+    z-index: 50;
+    backdrop-filter: blur(18px);
+    pointer-events: auto;
+}
+
+.lang-dropdown.open {
+    display: block;
+}
+
+.lang-option {
+    width: 100%;
+    padding: 12px 16px;
+    margin-bottom: 10px;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 10px;
+    background: rgba(10, 10, 10, 0.95);
+    color: #ffffff;
+    text-align: center;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.lang-option:last-child {
+    margin-bottom: 0;
+}
+
+.lang-option:hover {
+    background-color: rgba(255,255,255,0.1);
+    border-color: #99ffff;
+    transform: translateX(2px);
+}
+
+
+
+/* Set each main div to full desktop viewport size individually */
+.div1, .div2, .div3, .div4 {
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+}
+.div1{
+    text-align: center;
+    
+}
+.div1-1{
+    margin-top: 12rem;
+    color: #ffffff;
+}
+.div2 {
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+     color: #e6eef8;
+     text-align: center;
+}
+.div3 {
+    width: 100vw;
+    height: auto;
+    box-sizing: border-box;
+     color: #e6eef8;
+     text-align: center;
+     
+}
+.prtimg{
+    width: 20rem;
+    height: 12rem; ;
+    padding: 30px;
+}
+
+.div3-1 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    
+}
+
+.portfolio-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+
+    background: rgba(10, 10, 10, 0.4);
+    text-decoration: none;
+    color: #e6eef8;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.portfolio-item:hover {
+    border-color: cyan;
+    background: rgba(0, 255, 255, 0.1);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 255, 255, 0.2);
+}
+
+.portfolio-text {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #828384;
+}
+.div4 {
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+     color: #e6eef8;
+     text-align: center;
+}
+
+/* Dark soft gradients for each section (soft, subtle, readable) */
+
+
+
+/* Soften the palette and add translucent overlays + inset shadows
+   so adjacent sections blend almost imperceptibly */
+.div1, .div2, .div3, .div4 {
+    position: relative;
+    overflow: hidden;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: 0;
+   
+}
+
+
+
+/* Soft translucent overlay to blur seam perception */
+.div1::before, .div2::before, .div3::before, .div4::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+
+    mix-blend-mode: overlay;
+    opacity: 0.85;
+    transition: opacity 700ms ease, transform 700ms ease;
+    transform: scale(1.01);
+}
+
+/* Large, blurred phosphorescent glows (use ::after) to create seamless luminous blending */
+.div1::after, .div2::after, .div3::after, .div4::after {
+    content: "";
+    position: absolute;
+    inset: -20% -20% -20% -20%;
+    pointer-events: none;
+    filter: blur(46px);
+    opacity: 0.75;
+    transition: opacity 900ms ease, transform 900ms ease;
+}
+
+/* Remove default top margins of headings to avoid gap under the header */
+
