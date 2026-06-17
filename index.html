@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-left">
+            <button class="lang-btn" type="button" id="langToggle">Language</button>
+            <div class="lang-dropdown" id="langDropdown" aria-label="Language selector">
+                <button type="button" class="lang-option">English</button>
+                <button type="button" class="lang-option">Farsi</button>
+                <button type="button" class="lang-option">Spanish</button>
+            </div>
+        </div>
+        <nav class="header-nav" aria-label="Primary navigation">
+            <a href="#about" class="nav-box">About Me</a>
+            <a href="#portfolio" class="nav-box">Portfolio</a>
+            <a href="#contact" class="nav-box">Contact</a>
+        </nav>
+    </header>
+    <div class="div1">
+        <div class="div1-1">
+            <h1>Welcome to My Personal Website</h1>
+            <p>This is a brief introduction about myself.</p>
+        </div>
+  
+    </div>
+   <div id="about" class="div2">
+        <h2>About Me</h2>
+        <p>Here you can find more information about my background, skills, and interests.</p>
+    </div>
+    <div id="portfolio" class="div3">
+        <h2>Portfolio</h2>
+        <p>Check out some of my recent projects and work.</p>
+        <div class="div3-1">
+            <a href="#" class="portfolio-item">
+                <img class="prtimg" src="imgs/1.jpg" alt="">
+                <p class="portfolio-text">Project 1</p>
+            </a>
+            <a href="#" class="portfolio-item">
+                <img class="prtimg" src="imgs/2.jpg" alt="">
+                <p class="portfolio-text">Project 2</p>
+            </a>
+            <a href="#" class="portfolio-item">
+                <img class="prtimg" src="imgs/3.jpg" alt="">
+                <p class="portfolio-text">Project 3</p>
+            </a>
+            <a href="#" class="portfolio-item">
+                <img class="prtimg" src="imgs/4.jpg" alt="">
+                <p class="portfolio-text">Project 4</p>
+            </a>
+            <a href="#" class="portfolio-item">
+                <img class="prtimg" src="imgs/5.jpg" alt="">
+                <p class="portfolio-text">Project 5</p>
+            </a>
+            <a href="#" class="portfolio-item">
+                <img class="prtimg" src="imgs/6.jpg" alt="">
+                <p class="portfolio-text">Project 6</p>
+            </a>
+        </div>
+    </div>
+    <div id="contact" class="div4">
+        <h2>Contact</h2>
+        <p>Feel free to reach out to me through the contact form below.</p>
+    </div>    
+    <script>
+        const langToggle = document.getElementById('langToggle');
+        const langDropdown = document.getElementById('langDropdown');
+        const langOptions = document.querySelectorAll('.lang-option');
+
+        langToggle.addEventListener('click', () => {
+            langDropdown.classList.toggle('open');
+        });
+
+        langOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                langDropdown.classList.remove('open');
+            });
+        });
+
+        document.addEventListener('click', event => {
+            if (!langToggle.contains(event.target) && !langDropdown.contains(event.target)) {
+                langDropdown.classList.remove('open');
+            }
+        });
+    </script>
+</body>
+</html>
