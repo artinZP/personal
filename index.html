@@ -1,92 +1,73 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="style.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Artin Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-PA9h4Q+uDsIXT7qJGv3lCXG9XYtEKYwq7b4EA8NnI+7L59rKZ6XDcxk5n1MszgQqsJ5yUOQd4v2Qq5qWNPg6/Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header class="site-header">
-        <div class="header-left">
-            <button class="lang-btn" type="button" id="langToggle">Language</button>
-            <div class="lang-dropdown" id="langDropdown" aria-label="Language selector">
-                <button type="button" class="lang-option">English</button>
-                <button type="button" class="lang-option">Farsi</button>
-                <button type="button" class="lang-option">Spanish</button>
-            </div>
-        </div>
-        <nav class="header-nav" aria-label="Primary navigation">
-            <a href="#about" class="nav-box">About Me</a>
-            <a href="#portfolio" class="nav-box">Portfolio</a>
-            <a href="#contact" class="nav-box">Contact</a>
-        </nav>
-    </header>
-    <div class="div1">
-        <div class="div1-1">
-            <h1>Welcome to My Personal Website</h1>
-            <p>This is a brief introduction about myself.</p>
-        </div>
-  
+  <header>
+    <div class="nav-inner">
+      <div class="brand">Artin</div>
+      <nav aria-label="Primary navigation">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="aboutme.html">About Me</a>
+        <a class="nav-link" href="portfolio.html">Portfolio</a>
+      </nav>
     </div>
-   <div id="about" class="div2">
-        <h2>About Me</h2>
-        <p>Here you can find more information about my background, skills, and interests.</p>
-    </div>
-    <div id="portfolio" class="div3">
-        <h2>Portfolio</h2>
-        <p>Check out some of my recent projects and work.</p>
-        <div class="div3-1">
-            <a href="#" class="portfolio-item">
-                <img class="prtimg" src="imgs/1.jpg" alt="">
-                <p class="portfolio-text">Project 1</p>
-            </a>
-            <a href="#" class="portfolio-item">
-                <img class="prtimg" src="imgs/2.jpg" alt="">
-                <p class="portfolio-text">Project 2</p>
-            </a>
-            <a href="#" class="portfolio-item">
-                <img class="prtimg" src="imgs/3.jpg" alt="">
-                <p class="portfolio-text">Project 3</p>
-            </a>
-            <a href="#" class="portfolio-item">
-                <img class="prtimg" src="imgs/4.jpg" alt="">
-                <p class="portfolio-text">Project 4</p>
-            </a>
-            <a href="#" class="portfolio-item">
-                <img class="prtimg" src="imgs/5.jpg" alt="">
-                <p class="portfolio-text">Project 5</p>
-            </a>
-            <a href="#" class="portfolio-item">
-                <img class="prtimg" src="imgs/6.jpg" alt="">
-                <p class="portfolio-text">Project 6</p>
-            </a>
+  </header>
+
+  <main>
+    <section class="section hero">
+      <div class="hero-content">
+        <h1 class="hero-title">Where Ideas Meet Interface.</h1>
+        <p class="hero-subtitle">A space built for creativity, clean code, and meaningful design.</p>
+        <p class="hero-text">This is my digital portfolio — a curated showcase of projects where functionality meets aesthetics. Browse through my work to see how I transform complex challenges into intuitive, user-friendly digital experiences.</p>
+        <div class="social-row" aria-label="Social media links">
+          <a class="social-link" href="https://www.linkedin.com" target="_blank" rel="noreferrer noopener" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+          </a>
+          <a class="social-link" href="https://github.com" target="_blank" rel="noreferrer noopener" aria-label="GitHub">
+            <i class="fab fa-github" aria-hidden="true"></i>
+          </a>
+          <a class="social-link" href="mailto:artin@example.com" aria-label="Email">
+            <i class="fas fa-envelope" aria-hidden="true"></i>
+          </a>
         </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-column">
+        <h3 class="footer-title">Brief explanation</h3>
+        <p class="footer-text">I’m a front-end developer focused on clean design, smooth interactions, and user-centered digital experiences.</p>
+      </div>
+      <div class="footer-column">
+        <h3 class="footer-title wwv">Contact</h3>
+        <div class="footer-links footer-contact-list">
+          <a class="footer-link footer-contact-item" href="mailto:artin@example.com">
+            <span class="contact-icon"><i class="fas fa-envelope" aria-hidden="true"></i></span>
+            artin@example.com
+          </a>
+          <a class="footer-link footer-contact-item" href="tel:+1234567890">
+            <span class="contact-icon"><i class="fas fa-phone" aria-hidden="true"></i></span>
+            +1 234 567 890
+          </a>
+          <a class="footer-link footer-contact-item" href="https://www.linkedin.com" target="_blank" rel="noreferrer noopener">
+            <span class="contact-icon"><i class="fab fa-linkedin-in" aria-hidden="true"></i></span>
+            linkedin.com/in/artin
+          </a>
+        </div>
+      </div>
     </div>
-    <div id="contact" class="div4">
-        <h2>Contact</h2>
-        <p>Feel free to reach out to me through the contact form below.</p>
-    </div>    
-    <script>
-        const langToggle = document.getElementById('langToggle');
-        const langDropdown = document.getElementById('langDropdown');
-        const langOptions = document.querySelectorAll('.lang-option');
-
-        langToggle.addEventListener('click', () => {
-            langDropdown.classList.toggle('open');
-        });
-
-        langOptions.forEach(option => {
-            option.addEventListener('click', () => {
-                langDropdown.classList.remove('open');
-            });
-        });
-
-        document.addEventListener('click', event => {
-            if (!langToggle.contains(event.target) && !langDropdown.contains(event.target)) {
-                langDropdown.classList.remove('open');
-            }
-        });
-    </script>
+    <div class="footer-bottom">© 2026 Artin. All rights reserved.</div>
+  </footer>
 </body>
 </html>
