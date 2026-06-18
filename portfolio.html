@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio | Artin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="nav-inner">
+      <div class="brand">Artin</div>
+      <nav aria-label="Primary navigation">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="aboutme.html">About Me</a>
+        <a class="nav-link" href="portfolio.html">Portfolio</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="section-inner">
+        <h2 class="section-title">Portfolio</h2>
+        <p class="section-subtitle">Featured work that demonstrates clean design systems, thoughtful user experiences, and polished front-end execution.</p>
+        <div class="portfolio-slider-wrapper">
+          <div class="portfolio-grid" id="portfolioSlider">
+            <article class="project-card">
+              <div class="project-image">Project One</div>
+              <div class="project-content">
+                <h3 class="project-title">Interactive Dashboard</h3>
+                <p class="project-description">A sleek dashboard prototype with intuitive navigation, data summaries, and modern card layouts designed for desktop and mobile.</p>
+                <button class="project-button" type="button">View Project</button>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-image">Project Two</div>
+              <div class="project-content">
+                <h3 class="project-title">Landing Experience</h3>
+                <p class="project-description">A conversion-focused landing page with polished typography, strong hierarchy, and a calm, engaging visual rhythm.</p>
+                <button class="project-button" type="button">View Project</button>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-image">Project Three</div>
+              <div class="project-content">
+                <h3 class="project-title">Mobile App UI</h3>
+                <p class="project-description">A branded mobile interface concept with smooth interactions, clean spacing, and accessible visual design for modern apps.</p>
+                <button class="project-button" type="button">View Project</button>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-image">Project Four</div>
+              <div class="project-content">
+                <h3 class="project-title">E-commerce Redesign</h3>
+                <p class="project-description">A polished product catalog redesign with clear purchase paths, intuitive filters, and refined visual storytelling.</p>
+                <button class="project-button" type="button">View Project</button>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-image">Project Five</div>
+              <div class="project-content">
+                <h3 class="project-title">Brand Website</h3>
+                <p class="project-description">A modern brand site concept with bold imagery, responsive layouts, and a strong focus on user engagement.</p>
+                <button class="project-button" type="button">View Project</button>
+              </div>
+            </article>
+          </div>
+          <div class="portfolio-controls">
+            <button id="prevProject" class="slider-button" type="button">Previous</button>
+            <button id="nextProject" class="slider-button" type="button">Next</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const slider = document.getElementById('portfolioSlider');
+      const prevBtn = document.getElementById('prevProject');
+      const nextBtn = document.getElementById('nextProject');
+      const cardWidth = slider.querySelector('.project-card').offsetWidth + 24;
+
+      prevBtn.addEventListener('click', function () {
+        slider.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+      });
+
+      nextBtn.addEventListener('click', function () {
+        slider.scrollBy({ left: cardWidth, behavior: 'smooth' });
+      });
+    });
+  </script>
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-column">
+        <h3 class="footer-title">Brief explanation</h3>
+        <p class="footer-text">I’m a front-end developer focused on clean design, smooth interactions, and user-centered digital experiences.</p>
+      </div>
+      <div class="footer-column">
+        <h3 class="footer-title wwv">Contact</h3>
+        <div class="footer-links footer-contact-list">
+          <a class="footer-link footer-contact-item" href="mailto:artin@example.com">
+            <span class="contact-icon"><i class="fas fa-envelope" aria-hidden="true"></i></span>
+            artin@example.com
+          </a>
+          <a class="footer-link footer-contact-item" href="tel:+1234567890">
+            <span class="contact-icon"><i class="fas fa-phone" aria-hidden="true"></i></span>
+            +1 234 567 890
+          </a>
+          <a class="footer-link footer-contact-item" href="https://www.linkedin.com" target="_blank" rel="noreferrer noopener">
+            <span class="contact-icon"><i class="fab fa-linkedin-in" aria-hidden="true"></i></span>
+            linkedin.com/in/artin
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 Artin. All rights reserved.</div>
+  </footer>
+</body>
+</html>
