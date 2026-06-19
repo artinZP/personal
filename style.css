@@ -134,6 +134,7 @@ main {
   grid-template-columns: minmax(0, 1fr) minmax(320px, 360px);
   gap: 3rem;
   align-items: start;
+  margin-left: 2rem;
 }
 
 .hero-content {
