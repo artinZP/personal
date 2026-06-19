@@ -547,12 +547,12 @@ main {
   color: var(--accent);
   transform: translateY(-2px);
 }
-hero-subtitle
+
 .footer {
   background: rgba(17, 34, 64, 0.6);
   border-top: 1px solid var(--border);
   padding: 4rem 1.5rem 2rem;
-  margin-top: 4rem;
+  
 }
 
 .footer-inner {
