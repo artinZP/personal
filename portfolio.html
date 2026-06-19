@@ -93,7 +93,7 @@
         <div class="footer-links footer-contact-list">
           <a class="footer-link footer-contact-item" href="mailto:artinzamanipour@gmai.com">
             <span class="contact-icon"><i class="fas fa-envelope" aria-hidden="true"></i></span>
-            artinzamanipour@gmai.com
+            artinzamanipour@gmail.com
           </a>
           <a class="footer-link footer-contact-item" href="tel:+98 902 906 3484">
             <span class="contact-icon"><i class="fas fa-phone" aria-hidden="true"></i></span>
@@ -108,5 +108,92 @@
     </div>
     <div class="footer-bottom">© 2026 Artin. All rights reserved.</div>
   </footer>
+   <script>
+  document.addEventListener('DOMContentLoaded', function () {
+  // انتخاب المان‌ها با همان idهایی که داری
+  const grid = document.querySelector('.portfolio-grid');
+  const prevBtn = document.getElementById('prevProject');
+  const nextBtn = document.getElementById('nextProject');
+  const cards = document.querySelectorAll('.project-card');
+
+  if (!grid || !prevBtn || !nextBtn || cards.length === 0) return;
+
+  // اطمینان از overflow:hidden روی grid (بدون تغییر در CSS)
+  grid.style.overflow = 'hidden';
+
+  let currentIndex = 0;
+  const totalCards = cards.length;
+  const gap = 24; // همون gap-6 که توی CSS داری
+
+  function getCardsPerView() {
+    if (window.innerWidth < 768) return 1;
+    if (window.innerWidth < 1024) return 2;
+    return 3;
+  }
+
+  function getCardWidth() {
+    const firstCard = cards[0];
+    // از offsetWidth یا getBoundingClientRect استفاده می‌کنیم
+    return firstCard.offsetWidth || firstCard.getBoundingClientRect().width || 300;
+  }
+
+  function updateSlider() {
+    const perView = getCardsPerView();
+    const maxIndex = Math.max(0, totalCards - perView);
+    if (currentIndex > maxIndex) currentIndex = maxIndex;
+    if (currentIndex < 0) currentIndex = 0;
+
+    const cardWidth = getCardWidth();
+    const slideWidth = cardWidth + gap;
+    // مقدار translateX یکسان برای همه کارت‌ها
+    const offset = -currentIndex * slideWidth;
+
+    // به همه کارت‌ها یک transform یکسان می‌دیم (با هم حرکت می‌کنن)
+    cards.forEach(card => {
+      card.style.transform = `translateX(${offset}px)`;
+      card.style.transition = 'transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+    });
+
+    // غیرفعال کردن دکمه‌ها
+    prevBtn.disabled = currentIndex === 0;
+    nextBtn.disabled = currentIndex >= maxIndex;
+    prevBtn.style.opacity = currentIndex === 0 ? '0.4' : '1';
+    nextBtn.style.opacity = currentIndex >= maxIndex ? '0.4' : '1';
+  }
+
+  // رویدادهای کلیک
+  nextBtn.addEventListener('click', function () {
+    const perView = getCardsPerView();
+    const maxIndex = Math.max(0, totalCards - perView);
+    if (currentIndex < maxIndex) {
+      currentIndex++;
+      updateSlider();
+    }
+  });
+
+  prevBtn.addEventListener('click', function () {
+    if (currentIndex > 0) {
+      currentIndex--;
+      updateSlider();
+    }
+  });
+
+  // ریسپانسیو
+  let resizeTimer;
+  window.addEventListener('resize', function () {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function () {
+      const perView = getCardsPerView();
+      const maxIndex = Math.max(0, totalCards - perView);
+      if (currentIndex > maxIndex) currentIndex = maxIndex;
+      updateSlider();
+    }, 200);
+  });
+
+  // اجرای اولیه
+  window.addEventListener('load', updateSlider);
+  setTimeout(updateSlider, 300);
+});
+</script>
 </body>
 </html>
