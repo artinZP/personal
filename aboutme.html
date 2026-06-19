@@ -74,5 +74,32 @@
     </div>
     <div class="footer-bottom">© 2026 Artin. All rights reserved.</div>
   </footer>
+  <script>
+      const skills = [
+        'Frontend Development',
+        'UI / UX Design',
+        'Responsive Layouts',
+        'Performance Optimization',
+        'Component Systems',
+        'Modern Tooling'
+      ];
+      const skillsLine = document.querySelector('.skills-rotator-line');
+      if (skillsLine) {
+        let current = 0;
+        function showSkill() {
+          skillsLine.classList.remove('fade-in');
+          skillsLine.classList.add('fade-out');
+          setTimeout(() => {
+            skillsLine.textContent = skills[current];
+            skillsLine.classList.remove('fade-out');
+            skillsLine.classList.add('fade-in');
+            current = (current + 1) % skills.length;
+          }, 250);
+        }
+        showSkill();
+        setInterval(showSkill, 3500);
+      }
+
+  </script>
 </body>
 </html>
